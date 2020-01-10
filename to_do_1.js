@@ -1,63 +1,35 @@
 function pushFront(val, arr) {
-  var new_arr = [];
-  new_arr[0] = val;
-  var i = 0;
-  while(i < arr.length) {
-    // new_arr.push(arr[i]);
-    new_arr[i + 1] = arr[i]
-    i++;
+  for (var i = arr.length; i >= 1; i--) {
+    arr[i] = arr[i - 1];
   }
-  return new_arr;
+  arr[0] = val;
+  return arr;
 }
 
 function popFront(arr) {
-  var new_arr = [];
-  var i = 0;
-  while(i < arr.length) {
-    pos = arr.length - i - 1;
-    if (pos != 0) {
-      new_arr[pos - 1] = arr[pos];
-    }
-    i++;
+  r = arr[0];
+  for (var i = 1; i < arr.length; i++) {
+    arr[i - 1] = arr[i];
   }
-  // return new_arr;
-  return arr[0];
+  arr.pop();
+  return r;
 }
 
 function insertAt(val, index, arr) {
-  var new_arr = [];
-  var i = 0;
-  while(i < arr.length) {
-    if (i < index) {
-      // new_arr.push(arr[i]);
-      new_arr[i] = arr[i]
-    } else if (i > index) {
-      new_arr[i + 1] = arr[i];
-    } else {
-      new_arr[i + 1] = arr[i];
-      new_arr[i] = val;
-    }
-    i++;
+  for (var i = arr.length; i > index; i--) {
+    arr[i] = arr[i - 1];
   }
-  return new_arr;
+  arr[index] = val;
+  return arr;
 }
 
 function removeAt(arr, index) {
-  var new_arr = [];
-  var i = 0;
-  while(i < arr.length) {
-    if (i < index) {
-      // new_arr.push(arr[i]);
-      new_arr[i] = arr[i];
-    } else if (i > index) {
-      new_arr[i - 1] = arr[i];
-    } else {
-      new_arr[i] = arr[i + 1];
-    }
-    i++;
+  ret = arr[index];
+  for (var i = index; i < arr.length; i++) {
+    arr[i] = arr[i + 1];
   }
-  // return new_arr;
-  return arr[index];
+  arr.length = arr.length - 1;
+  return ret;
 }
 
 function swapPairs(arr) {
