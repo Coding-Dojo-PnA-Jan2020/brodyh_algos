@@ -1,4 +1,4 @@
-function pushFront(val, arr) {
+function pushFront(arr, val) {
   for (var i = arr.length; i >= 1; i--) {
     arr[i] = arr[i - 1];
   }
