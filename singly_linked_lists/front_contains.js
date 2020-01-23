@@ -25,12 +25,12 @@ class SinglyLinkedList {
     if (this.head == null) {
       return null
     };
-    return this.head.value;
+    return this.head.val;
   }
   contains(val) {
     var node = this.head;
     while (node != null) {
-      if (node.value == val) {
+      if (node.val == val) {
         return true;
       }
       node = node.next
