@@ -18,13 +18,13 @@ class SinglyLinkedList {
   removeFront() {
     if (this.head != null) {
       this.head = this.head.next;
-    };
+    }
     return this;
   }
   front() {
     if (this.head == null) {
       return null
-    };
+    }
     return this.head.val;
   }
   contains(val) {
