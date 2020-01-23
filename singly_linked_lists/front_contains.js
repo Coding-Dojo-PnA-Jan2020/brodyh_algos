@@ -14,13 +14,13 @@ class SinglyLinkedList {
     node.next = this.head;
     this.head = node;
     return this;
-  };
+  }
   removeFront() {
     if (this.head != null) {
       this.head = this.head.next;
     };
     return this;
-  };
+  }
   front() {
     if (this.head == null) {
       return null
@@ -32,9 +32,9 @@ class SinglyLinkedList {
     while (node != null) {
       if (node.value == val) {
         return true;
-      };
+      }
       node = node.next
-    };
+    }
     return false;
   }
 }
